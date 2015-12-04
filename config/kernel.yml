@@ -1,0 +1,15 @@
+services:
+  request:
+    class: Symfony\Component\HttpFoundation\Request
+    factory: [ Symfony\Component\HttpFoundation\Request, createFromGlobals ]
+  request_stack:
+    class: Symfony\Component\HttpFoundation\RequestStack
+  resolver:
+    class: Symfony\Component\HttpKernel\Controller\ControllerResolver
+  http_kernel:
+    class: Symfony\Component\HttpKernel\HttpKernel
+    arguments: ["@dispatcher", "@resolver", "@request_stack"]
+  response:
+    class: Symfony\Component\HttpFoundation\Response
+    factory: [ "@http_kernel", handle]
+    arguments: ["@request"]

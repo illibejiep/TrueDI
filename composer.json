@@ -1,0 +1,20 @@
+{
+    "name": "illibejiep/true-ioc",
+    "description": "True IoC Framework",
+    "require": {
+        "symfony/dependency-injection": "^3.0",
+        "symfony/yaml": "^3.0",
+        "symfony/http-kernel": "^3.0",
+        "symfony/routing": "^3.0",
+        "symfony/config": "^3.0"
+    },
+    "authors": [
+        {
+            "name": "Vasilii Lapin",
+            "email": "illibejiep@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "": "src/" }
+    }
+}

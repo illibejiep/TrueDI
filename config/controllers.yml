@@ -1,0 +1,7 @@
+services:
+  controller.default:
+    class: App\Controller\DefaultController
+    arguments: [ "@request" ]
+  controller.page:
+      class: App\Controller\PageController
+      arguments: [ "@request" ]

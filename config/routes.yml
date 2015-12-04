@@ -1,0 +1,31 @@
+services:
+  route.home:
+    class: Symfony\Component\Routing\Route
+    arguments:
+      path: /
+      defaults:
+        _controller: ["@controller.default", 'defaultAction']
+  route.asdf:
+    class: Symfony\Component\Routing\Route
+    arguments:
+      path: /asdf
+      defaults:
+        _controller: ["@controller.page", 'defaultAction']
+  route.collection:
+    class: Symfony\Component\Routing\RouteCollection
+    calls:
+      - [ add, ["route_home", "@route.home"] ]
+      - [ add, ["route_asdf", "@route.asdf"] ]
+  router.request_context:
+      class: Symfony\Component\Routing\RequestContext
+      calls:
+        - [ fromRequest, ["@request"] ]
+  router.matcher:
+    class: Symfony\Component\Routing\Matcher\UrlMatcher
+    arguments: [ "@route.collection", "@router.request_context" ]
+  router.listener:
+    class: Symfony\Component\HttpKernel\EventListener\RouterListener
+    arguments:
+      matcher: "@router.matcher"
+      request_stack: "@request_stack"
+      context: "@router.request_context"

@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="84064203-348f-47b0-baf9-f756f2ade7ee" name="Default" comment="" />
+    <ignored path="trueIoC.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="trueIoC" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="13" selection-start="349" selection-end="349" vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="285">
+              <folding>
+                <element signature="e#7#66#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="YamlFileLoader.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/symfony/dependency-injection/Loader/YamlFileLoader.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="20" selection-start="1575" selection-end="1575" vertical-scroll-proportion="-10.666667" vertical-offset="284" max-vertical-offset="6360">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DefaultController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App/Controller/DefaultController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="33" selection-start="416" selection-end="416" vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="435">
+              <folding>
+                <element signature="e#33#78#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="services.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/services.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="35" selection-start="44" selection-end="44" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kernel.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/kernel.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="27" selection-start="565" selection-end="565" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="events.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/events.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="46" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/routes.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="18" selection-start="808" selection-end="808" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controllers.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/controllers.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="31" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="13" selection-start="20" selection-end="20" vertical-scroll-proportion="0.015957447" vertical-offset="0" max-vertical-offset="940">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="composer.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composer.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="6" selection-start="413" selection-end="413" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="390">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/TrueIoC/Kernel.php" />
+        <option value="$PROJECT_DIR$/src/TrueIoC/Container.php" />
+        <option value="$PROJECT_DIR$/src/TrueIoC/ContainerBuilder.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/vendor/symfony/event-dispatcher/EventDispatcher.php" />
+        <option value="$PROJECT_DIR$/src/TrueIoC/TrueContainerBuilder.php" />
+        <option value="$PROJECT_DIR$/vendor/symfony/http-kernel/HttpKernel.php" />
+        <option value="$PROJECT_DIR$/vendor/symfony/http-foundation/Request.php" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/www/index.php" />
+        <option value="$PROJECT_DIR$/src/App/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/src/App/Controller/PageController.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/config/controllers.yml" />
+        <option value="$PROJECT_DIR$/config/routes.yml" />
+        <option value="$PROJECT_DIR$/config/events.yml" />
+        <option value="$PROJECT_DIR$/config/services.yml" />
+        <option value="$PROJECT_DIR$/config/kernel.yml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1920" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trueIoC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trueIoC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trueIoC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trueIoC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trueIoC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trueIoC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trueIoC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="options.lastSelected" value="Symfony2.SettingsForm" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jogging" />
+    <property name="SearchEverywhereHistory" value="" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/App/Controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/www" />
+      <recent name="$PROJECT_DIR$/src/TrueIoC" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="84064203-348f-47b0-baf9-f756f2ade7ee" name="Default" comment="" />
+      <created>1449231883716</created>
+      <updated>1449231883716</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1920" y="0" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24973376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962587" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="uml://PHP/\Symfony\Component\HttpKernel\HttpKernelInterface">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>PHP</ID>
+          <OriginalElement>\Symfony\Component\HttpKernel\HttpKernelInterface</OriginalElement>
+          <nodes>
+            <node x="201.0" y="237.0">\Symfony\Component\HttpKernel\Tests\Fixtures\KernelForTest</node>
+            <node x="705.3863636363637" y="79.0">\Symfony\Component\HttpKernel\Tests\EventListener\TestKernel</node>
+            <node x="232.25" y="158.0">\Symfony\Component\HttpKernel\Tests\TestHttpKernel</node>
+            <node x="111.25" y="79.0">\Symfony\Component\HttpKernel\KernelInterface</node>
+            <node x="379.25" y="158.0">\Symfony\Component\HttpKernel\Tests\HttpCache\TestMultipleHttpKernel</node>
+            <node x="332.3863636363637" y="79.0">\Symfony\Component\HttpKernel\HttpKernel</node>
+            <node x="452.3863636363637" y="79.0">\Symfony\Component\HttpKernel\Tests\EventListener\TestKernelThatThrowsException</node>
+            <node x="825.3863636363637" y="79.0">\Symfony\Component\HttpKernel\HttpCache\HttpCache</node>
+            <node x="139.25" y="158.0">\Symfony\Component\HttpKernel\Kernel</node>
+            <node x="0.0" y="237.0">\Symfony\Component\HttpKernel\Tests\Fixtures\KernelForOverrideName</node>
+            <node x="489.75" y="0.0">\Symfony\Component\HttpKernel\HttpKernelInterface</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="\Symfony\Component\HttpKernel\KernelInterface" target="\Symfony\Component\HttpKernel\HttpKernelInterface">
+              <point x="0.0" y="-14.5" />
+              <point x="175.75" y="49.0" />
+              <point x="505.35" y="49.0" />
+              <point x="-62.39999999999998" y="14.5" />
+            </edge>
+            <edge source="\Symfony\Component\HttpKernel\Tests\HttpCache\TestMultipleHttpKernel" target="\Symfony\Component\HttpKernel\HttpKernel">
+              <point x="0.0" y="-14.5" />
+              <point x="466.75" y="133.0" />
+              <point x="407.3863636363637" y="133.0" />
+              <point x="25.0" y="14.5" />
+            </edge>
+            <edge source="\Symfony\Component\HttpKernel\Tests\Fixtures\KernelForOverrideName" target="\Symfony\Component\HttpKernel\Kernel">
+              <point x="0.0" y="-14.5" />
+              <point x="90.5" y="212.0" />
+              <point x="157.5" y="212.0" />
+              <point x="-18.25" y="14.5" />
+            </edge>
+            <edge source="\Symfony\Component\HttpKernel\Tests\EventListener\TestKernelThatThrowsException" target="\Symfony\Component\HttpKernel\HttpKernelInterface">
+              <point x="0.0" y="-14.5" />
+              <point x="568.8863636363637" y="59.0" />
+              <point x="567.75" y="59.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="\Symfony\Component\HttpKernel\Kernel" target="\Symfony\Component\HttpKernel\KernelInterface">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="\Symfony\Component\HttpKernel\Tests\TestHttpKernel" target="\Symfony\Component\HttpKernel\HttpKernel">
+              <point x="0.0" y="-14.5" />
+              <point x="295.75" y="133.0" />
+              <point x="357.3863636363637" y="133.0" />
+              <point x="-25.0" y="14.5" />
+            </edge>
+            <edge source="\Symfony\Component\HttpKernel\HttpCache\HttpCache" target="\Symfony\Component\HttpKernel\HttpKernelInterface">
+              <point x="0.0" y="-14.5" />
+              <point x="875.3863636363637" y="49.0" />
+              <point x="630.15" y="49.0" />
+              <point x="62.39999999999998" y="14.5" />
+            </edge>
+            <edge source="\Symfony\Component\HttpKernel\HttpKernel" target="\Symfony\Component\HttpKernel\HttpKernelInterface">
+              <point x="0.0" y="-14.5" />
+              <point x="382.3863636363637" y="59.0" />
+              <point x="536.55" y="59.0" />
+              <point x="-31.200000000000045" y="14.5" />
+            </edge>
+            <edge source="\Symfony\Component\HttpKernel\Tests\EventListener\TestKernel" target="\Symfony\Component\HttpKernel\HttpKernelInterface">
+              <point x="0.0" y="-14.5" />
+              <point x="755.3863636363637" y="59.0" />
+              <point x="598.95" y="59.0" />
+              <point x="31.200000000000045" y="14.5" />
+            </edge>
+            <edge source="\Symfony\Component\HttpKernel\Tests\Fixtures\KernelForTest" target="\Symfony\Component\HttpKernel\Kernel">
+              <point x="0.0" y="-14.5" />
+              <point x="261.0" y="212.0" />
+              <point x="194.0" y="212.0" />
+              <point x="18.25" y="14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-210.0" y="-213.0" />
+          <SelectedNodes>
+            <node>\Symfony\Component\HttpKernel\HttpKernel</node>
+          </SelectedNodes>
+          <Categories />
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="225" column="0" selection-start="6062" selection-end="6062" vertical-scroll-proportion="-31.692308" vertical-offset="2551" max-vertical-offset="3465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/Controller/PageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="1" selection-start="434" selection-end="434" vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="33" selection-start="416" selection-end="416" vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="435">
+          <folding>
+            <element signature="e#33#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="6" selection-start="413" selection-end="413" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="390">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="13" selection-start="349" selection-end="349" vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="285">
+          <folding>
+            <element signature="e#7#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/dependency-injection/Loader/YamlFileLoader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="20" selection-start="1575" selection-end="1575" vertical-scroll-proportion="-10.666667" vertical-offset="284" max-vertical-offset="6360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="18" selection-start="808" selection-end="808" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/events.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="46" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/kernel.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="27" selection-start="565" selection-end="565" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="35" selection-start="44" selection-end="44" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/controllers.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="31" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="13" selection-start="20" selection-end="20" vertical-scroll-proportion="0.015957447" vertical-offset="0" max-vertical-offset="940">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+
