@@ -167,12 +167,12 @@ Now we can create a routing config.
 home:
   path: /
   defaults:
-    _controller: "DefaultController:defaultAction"
+    _controller: "App\Controller\DefaultController:defaultAction"
 
 some_page:
-  path: /page
+  path: /page/{name}
   defaults:
-    _controller: "PageController:defaultAction"
+    _controller: "App\Controller\PageController:defaultAction"
 ```
 
 And now if autoloader can find classes DefaultController and PageController it will work.
