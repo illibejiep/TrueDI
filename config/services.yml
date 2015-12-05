@@ -1,5 +1,6 @@
 imports:
   - { resource: 'controllers.yml' }
-  - { resource: 'routes.yml' }
+  - { resource: 'routing.yml' }
   - { resource: 'events.yml' }
   - { resource: 'kernel.yml' }
+  - { resource: 'view.yml' }

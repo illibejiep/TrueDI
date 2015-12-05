@@ -7,17 +7,23 @@ class PageController {
 
     protected $request;
 
-    function __construct(Request $request)
+    protected $templating;
+
+    function __construct($request, $templating)
     {
+        var_dump(get_class());
         $this->request = $request;
+        $this->templating = $templating;
     }
 
-    function defaultAction()
+    function defaultAction($name)
     {
-        return new Response('page default');
+        return array(
+            'name' => $name,
+        );
     }
 
-    function asdfAction()
+    function asdf()
     {
         return new Response('page asdf');
     }

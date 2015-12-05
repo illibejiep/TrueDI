@@ -53,7 +53,13 @@ Here is it:
 
 ```
 
-# in config/services.yml
+# in config/events.yml
+
+services:
+  dispatcher:
+    class: Symfony\Component\EventDispatcher\EventDispatcher
+
+# in config/kernel.yml
 
 services:
   request:
@@ -61,22 +67,25 @@ services:
     factory: [ Symfony\Component\HttpFoundation\Request, createFromGlobals ]
   request_stack:
     class: Symfony\Component\HttpFoundation\RequestStack
-  dispatcher:
-    class: Symfony\Component\EventDispatcher\EventDispatcher
-    calls:
-      - [ addSubscriber, ["@router.listener"]]
   resolver:
     class: Symfony\Component\HttpKernel\Controller\ControllerResolver
   http_kernel:
     class: Symfony\Component\HttpKernel\HttpKernel
     arguments: ["@dispatcher", "@resolver", "@request_stack"]
 
+#in config/services.yml
+
+imports:
+  - { resource: 'events.yml' }
+  - { resource: 'kernel.yml' }
+
 ```
 
-HttpKernel accepts Request object and returns Response object. So we can get Responce object in the front controller
+HttpKernel accepts Request object and returns Response object. Response can be obtained in the front controller
 
 ```
 // in www/index.php
+
 $HTTPKernel = $container->get('http_kernel');
 $request = $container->get('request');
 $response = $HTTPKernel->handle($request);
@@ -84,10 +93,11 @@ $response->send();
 
 ```
 
-Or we can define response in the config:
+or can be defined in the config
 
 ```
-# in config/services.yml
+# in config/kernel.yml
+
   response:
     class: Symfony\Component\HttpFoundation\Response
     factory: [ "@http_kernel", handle]
@@ -96,9 +106,10 @@ Or we can define response in the config:
 
 ```
 
-and get it in front controller
+and just get it in the front controller
 
 ```
+// in www/index.php
 
 $response = $container->get('response');
 $response->send();
@@ -121,7 +132,7 @@ composer require symfony/routing
 Initial configuration looks pretty complex.
 
 ```
-# in config/services.yml
+# in config/routing.yml
   router.file_locator:
     class: Symfony\Component\Config\FileLocator
     arguments: ["../config"]
@@ -142,11 +153,19 @@ Initial configuration looks pretty complex.
       request_stack: "@request_stack"
       context: "@router.request_context"
 
+# in config/services.yml
+
+imports:
+  - { resource: 'routing.yml' }
+  - { resource: 'events.yml' }
+  - { resource: 'kernel.yml' }
+
 ```
 
-And add 'router.listner' to the event dispatcher.
+And add 'router.listener' to the event dispatcher.
 
 ```
+# in config/events.yml
 
   dispatcher:
       class: Symfony\Component\EventDispatcher\EventDispatcher
@@ -182,14 +201,16 @@ So we have to define routes as a services manually. We don't need anymore servic
 Here is config:
 
 ```
-
+# in config/controllers.yml
+service:
   controller.default:
     class: App\Controller\DefaultController
-      arguments: [ "@request" ]
+    arguments: [ "@request" ]
   controller.page:
-      class: App\Controller\PageController
-        arguments: [ "@request" ]
+    class: App\Controller\PageController
+    arguments: [ "@request" ]
 
+# in config/routing.yml
   route.home:
     class: Symfony\Component\Routing\Route
     arguments:
@@ -220,6 +241,187 @@ Here is config:
         matcher: "@router"
         request_stack: "@request_stack"
         context: "@router.request_context"
+
+```
+
+But now here is another problem. Container initializes each controller with depends.
+So it will initialize all existed services which definitely is not good. Fortunately, the container
+has a lazy loading functional. But it has to be installed.
+
+```
+
+composer require symfony/proxy-manager-bridge
+
+```
+
+```
+
+//in www/index.php
+
+use \Symfony\Bridge\ProxyManager\LazyProxy\Instantiator\RuntimeInstantiator;
+
+// ...
+
+$container = new ContainerBuilder();
+$container->setProxyInstantiator(new RuntimeInstantiator());
+
+// ...
+
+```
+
+Now we can define lazy services.
+
+```
+
+services:
+  controller.default:
+    lazy:true
+    class: App\Controller\DefaultController
+    arguments: [ "@request" ]
+  controller.page:
+    lazy:true
+    class: App\Controller\PageController
+    arguments: [ "@request" ]
+
+```
+
+
+## View
+
+Lets install and configure Twig component.
+
+
+```
+
+  composer require symfony/twig
+
+```
+
+Container config:
+
+```
+# in config/view.yml
+services:
+  templating.twig_loader:
+    class: Twig_Loader_Filesystem
+    arguments: [ "../src/App/View" ]
+  templating.twig:
+    class: Twig_Environment
+    arguments: [ "@templating.twig_loader" ]
+
+# in config/controllers.yml
+
+services:
+  controller.default:
+    class: App\Controller\DefaultController
+    arguments: [ "@request", "@templating.twig" ]
+# ...
+
+```
+
+
+
+```
+// in src/App/Controller/DefaultController.php
+
+class DefaultController {
+
+    protected $request;
+
+    protected $templating;
+
+    function __construct($request, $templating)
+    {
+        $this->request = $request;
+        $this->templating = $templating;
+    }
+
+    function defaultAction()
+        {
+            return new Response(
+                $this->templating->render(
+                    'Default/default.twig',
+                    array(
+                        'name' => 'asdf',
+                    )
+                )
+            );
+        }
+// ...
+```
+
+It doesn't look good. Lets make it through 'kernel.view' event and add some sugar.
+
+```
+
+// in src/App/Listener/ViewListener.php
+
+namespace App\Listener;
+
+
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent;
+
+class ViewListener {
+
+    protected $templating;
+
+    function __construct($templating)
+    {
+        $this->templating = $templating;
+    }
+
+    public function onKernelView(GetResponseForControllerResultEvent $event)
+    {
+        $request = $event->getRequest();
+        $data = $event->getControllerResult();
+
+        $controller = $request->attributes->get('_controller');
+        $controllerName = get_class($controller[0]);
+        $controllerName = substr($controllerName,0,-10);
+
+        $actionName = $controller[1];
+        $actionName = substr($actionName,0,-6);
+
+        $controllerName = end(explode('\\',$controllerName));
+        $viewPath = $controllerName . '/' . $actionName . '.twig';
+
+        $content = $this->templating->render($viewPath, $data);
+
+        $response = new Response($content);
+
+        $event->setResponse($response);
+    }
+
+}
+
+```
+# in config/events.yml
+
+services:
+  dispatcher:
+    class: Symfony\Component\EventDispatcher\EventDispatcher
+    calls:
+      - [ addSubscriber, ["@router.listener"]]
+      - [ addListener , ["kernel.view", ["@templating.listener", "onKernelView" ]] ]
+
+```
+
+and controller
+
+```
+// in src/App/Controller/PageController.php
+
+// ...
+
+    function defaultAction($name)
+    {
+        return array(
+            'name' => $name,
+        );
+    }
+
+// ...
 
 ```
 

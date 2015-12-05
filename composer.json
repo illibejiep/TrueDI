@@ -6,7 +6,9 @@
         "symfony/yaml": "^3.0",
         "symfony/http-kernel": "^3.0",
         "symfony/routing": "^3.0",
-        "symfony/config": "^3.0"
+        "symfony/config": "^3.0",
+        "twig/twig": "^1.23",
+        "symfony/proxy-manager-bridge": "^3.0"
     },
     "authors": [
         {

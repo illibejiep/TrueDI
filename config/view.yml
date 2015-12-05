@@ -1,0 +1,10 @@
+services:
+  templating.twig_loader:
+    class: Twig_Loader_Filesystem
+    arguments: [ "../src/App/View" ]
+  templating.twig:
+    class: Twig_Environment
+    arguments: [ "@templating.twig_loader" ]
+  templating.listener:
+    class: App\Listener\ViewListener
+    arguments: ["@templating.twig"]

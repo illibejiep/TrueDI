@@ -1,7 +1,9 @@
 services:
   controller.default:
+    lazy: true
     class: App\Controller\DefaultController
-    arguments: [ "@request" ]
+    arguments: [ "@request", "@templating.twig" ]
   controller.page:
-      class: App\Controller\PageController
-      arguments: [ "@request" ]
+    lazy: true
+    class: App\Controller\PageController
+    arguments: [ "@request", "@templating.twig" ]

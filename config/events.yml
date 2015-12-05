@@ -3,3 +3,4 @@ services:
     class: Symfony\Component\EventDispatcher\EventDispatcher
     calls:
       - [ addSubscriber, ["@router.listener"]]
+      - [ addListener , ["kernel.view", ["@templating.listener", "onKernelView" ]] ]

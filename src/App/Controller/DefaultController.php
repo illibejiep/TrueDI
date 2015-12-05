@@ -7,14 +7,26 @@ class DefaultController {
 
     protected $request;
 
-    function __construct(Request $request)
+    protected $templating;
+
+    function __construct($request, $templating)
     {
+        var_dump(get_class());
         $this->request = $request;
+        $this->templating = $templating;
     }
+
 
     function defaultAction()
     {
-        return new Response('default');
+        $content = $this->templating->render(
+            'Default/default.twig',
+            array(
+                'name' => 'asdf',
+            )
+        );
+
+        return new Response($content);
     }
 
     function asdfAction()
