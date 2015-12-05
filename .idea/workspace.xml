@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84064203-348f-47b0-baf9-f756f2ade7ee" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    <list default="true" id="84064203-348f-47b0-baf9-f756f2ade7ee" name="Default" comment="DI">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/symfony2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/trueIoC.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
     </list>
     <ignored path="trueIoC.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,22 +71,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="9" selection-start="9" selection-end="9" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6495">
+            <state line="0" column="9" selection-start="9" selection-end="9" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="6495">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="2" selection-start="2" selection-end="2" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
+            <state line="0" column="2" selection-start="2" selection-end="2" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="940">
               <folding />
             </state>
           </provider>
@@ -161,8 +168,8 @@
         <option value="$PROJECT_DIR$/www/index.php" />
         <option value="$PROJECT_DIR$/config/services.yml" />
         <option value="$PROJECT_DIR$/config/controllers.yml" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -297,7 +304,11 @@
       <created>1449343504247</created>
       <updated>1449343504247</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="DI">
+      <created>1449343820715</created>
+      <updated>1449343820715</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -340,7 +351,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="stuff" />
+    <MESSAGE value="DI" />
+    <option name="LAST_COMMIT_MESSAGE" value="DI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -754,19 +766,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="2" selection-start="2" selection-end="2" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="940">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="9" selection-start="9" selection-end="9" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6495">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="2" selection-start="2" selection-end="2" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="940">
           <folding />
         </state>
       </provider>
