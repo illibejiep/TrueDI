@@ -1,4 +1,4 @@
-# True IoC application with Symfony2 components
+# True DI application with Symfony2 components
 
 Symfony2 framework implement DI-container pattern. The 'Kernel' class initizlizes DI-container
 and injects it in different components. So DI-container is used as Service Locator in this components.
