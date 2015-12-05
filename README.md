@@ -12,7 +12,6 @@ without using a Service Locator pattern. The main rule is: only DI-container can
 Lets install DI-container component.
 
 ```
-
   mkdir trueIoc
   cd trueIoc
   composer init
@@ -21,7 +20,6 @@ Lets install DI-container component.
   composer require symfony/yaml
   mkdir config
   mkdir www
-
 ```
 
 Then create front controller.
@@ -36,11 +34,8 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 require_once('../vendor/autoload.php');
 
 $container = new ContainerBuilder();
-
 $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../config'));
 $loader->load('services.yml');
-
-
 ```
 
 ## HttpKernel
@@ -52,7 +47,6 @@ EventDispatcher component for event system. They all can be initialized by using
 Here is it:
 
 ```
-
 # in config/events.yml
 
 services:
@@ -78,7 +72,6 @@ services:
 imports:
   - { resource: 'events.yml' }
   - { resource: 'kernel.yml' }
-
 ```
 
 HttpKernel accepts Request object and returns Response object. Response can be obtained in the front controller
@@ -90,7 +83,6 @@ $HTTPKernel = $container->get('http_kernel');
 $request = $container->get('request');
 $response = $HTTPKernel->handle($request);
 $response->send();
-
 ```
 
 or can be defined in the config
@@ -102,8 +94,6 @@ or can be defined in the config
     class: Symfony\Component\HttpFoundation\Response
     factory: [ "@http_kernel", handle]
     arguments: ["@request"]
-
-
 ```
 
 and just get it in the front controller
@@ -113,7 +103,6 @@ and just get it in the front controller
 
 $response = $container->get('response');
 $response->send();
-
 ```
 
 ControllerResolver class tries to get '_controller' property form custom parameters of Request object.
@@ -124,9 +113,7 @@ We can create a routing listener service for this purpose. Or better use the Sym
 
 
 ```
-
 composer require symfony/routing
-
 ```
 
 Initial configuration looks pretty complex.
@@ -159,7 +146,6 @@ imports:
   - { resource: 'routing.yml' }
   - { resource: 'events.yml' }
   - { resource: 'kernel.yml' }
-
 ```
 
 And add 'router.listener' to the event dispatcher.
@@ -171,7 +157,6 @@ And add 'router.listener' to the event dispatcher.
       class: Symfony\Component\EventDispatcher\EventDispatcher
       calls:
         - [ addSubscriber, ["@router.listener"]]
-
 ```
 
 Now we can create a routing config.
@@ -188,7 +173,6 @@ some_page:
   path: /page
   defaults:
     _controller: "PageController:defaultAction"
-
 ```
 
 And now if autoloader can find classes DefaultController and PageController it will work.
@@ -241,7 +225,6 @@ service:
         matcher: "@router"
         request_stack: "@request_stack"
         context: "@router.request_context"
-
 ```
 
 But now here is another problem. Container initializes each controller with depends.
@@ -249,13 +232,11 @@ So it will initialize all existed services which definitely is not good. Fortuna
 has a lazy loading functional. But it has to be installed.
 
 ```
-
 composer require symfony/proxy-manager-bridge
 
 ```
 
 ```
-
 //in www/index.php
 
 use \Symfony\Bridge\ProxyManager\LazyProxy\Instantiator\RuntimeInstantiator;
@@ -272,6 +253,7 @@ $container->setProxyInstantiator(new RuntimeInstantiator());
 Now we can define lazy services.
 
 ```
+# in config/controllers.yml
 
 services:
   controller.default:
@@ -282,19 +264,16 @@ services:
     lazy:true
     class: App\Controller\PageController
     arguments: [ "@request" ]
-
 ```
 
 
 ## View
 
-Lets install and configure Twig component.
+We are free to use any template engine. Lets install and configure the Twig.
 
 
 ```
-
   composer require symfony/twig
-
 ```
 
 Container config:
@@ -316,7 +295,6 @@ services:
     class: App\Controller\DefaultController
     arguments: [ "@request", "@templating.twig" ]
 # ...
-
 ```
 
 
@@ -353,11 +331,9 @@ class DefaultController {
 It doesn't look good. Lets make it through 'kernel.view' event and add some sugar.
 
 ```
-
 // in src/App/Listener/ViewListener.php
 
 namespace App\Listener;
-
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent;
@@ -392,8 +368,10 @@ class ViewListener {
 
         $event->setResponse($response);
     }
-
 }
+```
+
+events config
 
 ```
 # in config/events.yml
@@ -404,14 +382,12 @@ services:
     calls:
       - [ addSubscriber, ["@router.listener"]]
       - [ addListener , ["kernel.view", ["@templating.listener", "onKernelView" ]] ]
-
 ```
 
 and controller
 
 ```
 // in src/App/Controller/PageController.php
-
 // ...
 
     function defaultAction($name)
@@ -422,6 +398,5 @@ and controller
     }
 
 // ...
-
 ```
 
