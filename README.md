@@ -34,6 +34,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 require_once('../vendor/autoload.php');
 
 $container = new ContainerBuilder();
+$container->setParameter('app_root', realpath(__DIR__ . '/../'));
 $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../config'));
 $loader->load('services.yml');
 ```
@@ -122,7 +123,7 @@ Initial configuration looks pretty complex.
 # in config/routing.yml
   router.file_locator:
     class: Symfony\Component\Config\FileLocator
-    arguments: ["../config"]
+    arguments: ["%app_root%/config"]
   router.yml_loader:
     class: Symfony\Component\Routing\Loader\YamlFileLoader
     arguments: ["@router.file_locator"]
@@ -283,7 +284,7 @@ Container config:
 services:
   templating.twig_loader:
     class: Twig_Loader_Filesystem
-    arguments: [ "../src/App/View" ]
+    arguments: [ "%app_root%/src/App/View" ]
   templating.twig:
     class: Twig_Environment
     arguments: [ "@templating.twig_loader" ]
@@ -328,7 +329,8 @@ class DefaultController {
 // ...
 ```
 
-It doesn't look good. Lets make it through 'kernel.view' event and add some sugar.
+We also can do it through 'kernel.view' event.
+Like this for example:
 
 ```
 // in src/App/Listener/ViewListener.php
@@ -400,3 +402,68 @@ and controller
 // ...
 ```
 
+## Doctrine
+
+The same idea with doctrine. Just install it, configure service and inject in certain controller.
+
+```
+composer require doctrine/orm
+```
+
+```
+# in config/doctrine.yml
+parameters:
+  doctrine.driver: "pdo_pgsql"
+  doctrine.user: "postgres"
+  doctrine.password: "postgres"
+  doctrine.dbname: "true_di"
+  doctrine.paths: ["%app_root%/src/App/Entity"]
+  doctrine.is_dev: true
+
+services:
+  doctrine.config:
+    class: Doctrine\ORM\Configuration
+    factory: [ Doctrine\ORM\Tools\Setup, createAnnotationMetadataConfiguration ]
+    arguments:
+      paths: "%doctrine.paths%"
+      isDevMode: "%doctrine.is_dev%"
+  doctrine.entity_manager:
+    class: Doctrine\ORM\EntityManager
+    factory: [ Doctrine\ORM\EntityManager, create ]
+    arguments:
+      conn:
+        driver: "%doctrine.driver%"
+        user: "%doctrine.user%"
+        password: "%doctrine.password%"
+        dbname: "%doctrine.dbname%"
+      config: "@doctrine.config"
+
+# in config/services.yml
+# ...
+  - { resource: 'doctrine.yml' }
+
+# in config/controllers.yml
+# ...
+  controller.page:
+      lazy: true
+      class: App\Controller\PageController
+      arguments: [ "@request", "@templating.twig", "@doctrine.entity_manager" ]
+```
+
+But is this controller really need access to entity manager? Let's inject just certain entity repository.
+
+```
+# in config/repositories.yml
+services:
+  repository.page:
+    class: Doctrine\ORM\EntityRepository
+    factory: [ "@doctrine.entity_manager", getRepository ]
+    arguments: [ App\Entity\Page ]
+
+# in config/controller.yml
+# ...
+  controller.page:
+      lazy: true
+      class: App\Controller\PageController
+      arguments: [ "@request", "@templating.twig", "@repository.page" ]
+```

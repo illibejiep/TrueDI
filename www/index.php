@@ -9,6 +9,7 @@ require_once('../vendor/autoload.php');
 
 $container = new ContainerBuilder();
 $container->setProxyInstantiator(new RuntimeInstantiator());
+$container->setParameter('app_root', realpath(__DIR__ . '/../'));
 $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../config'));
 $loader->load('services.yml');
 

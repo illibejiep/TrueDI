@@ -6,4 +6,4 @@ services:
   controller.page:
     lazy: true
     class: App\Controller\PageController
-    arguments: [ "@request", "@templating.twig" ]
+    arguments: [ "@request", "@templating.twig", "@repository.page" ]

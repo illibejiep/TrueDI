@@ -4,3 +4,5 @@ imports:
   - { resource: 'events.yml' }
   - { resource: 'kernel.yml' }
   - { resource: 'view.yml' }
+  - { resource: 'doctrine.yml' }
+  - { resource: 'repositories.yml' }

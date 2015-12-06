@@ -1,0 +1,25 @@
+parameters:
+  doctrine.driver: "pdo_pgsql"
+  doctrine.user: "postgres"
+  doctrine.password: "postgres"
+  doctrine.dbname: "true_di"
+  doctrine.paths: ["%app_root%/src/App/Entity"]
+  doctrine.is_dev: true
+
+services:
+  doctrine.config:
+    class: Doctrine\ORM\Configuration
+    factory: [ Doctrine\ORM\Tools\Setup, createAnnotationMetadataConfiguration ]
+    arguments:
+      paths: "%doctrine.paths%"
+      isDevMode: "%doctrine.is_dev%"
+  doctrine.entity_manager:
+    class: Doctrine\ORM\EntityManager
+    factory: [ Doctrine\ORM\EntityManager, create ]
+    arguments:
+      conn:
+        driver: "%doctrine.driver%"
+        user: "%doctrine.user%"
+        password: "%doctrine.password%"
+        dbname: "%doctrine.dbname%"
+      config: "@doctrine.config"

@@ -1,7 +1,7 @@
 services:
   templating.twig_loader:
     class: Twig_Loader_Filesystem
-    arguments: [ "../src/App/View" ]
+    arguments: [ "%app_root%/src/App/View" ]
   templating.twig:
     class: Twig_Environment
     arguments: [ "@templating.twig_loader" ]
