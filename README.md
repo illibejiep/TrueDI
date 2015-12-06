@@ -9,20 +9,20 @@ without using a Service Locator pattern. The main rule is: only DI-container can
 
 ## Container
 
-Lets install DI-container component.
+Lets install DI-container component
 
 ```
-  mkdir trueIoc
-  cd trueIoc
-  composer init
-  composer require symfony/dependency-injection
-  composer require symfony/config
-  composer require symfony/yaml
-  mkdir config
-  mkdir www
+mkdir trueDI
+cd trueDI
+composer init
+composer require symfony/dependency-injection
+composer require symfony/config
+composer require symfony/yaml
+mkdir config
+mkdir www
 ```
 
-Then create front controller.
+then create front controller.
 
 ```
 // in www/index.php
@@ -90,7 +90,7 @@ or can be defined in the config
 
 ```
 # in config/kernel.yml
-
+# ...
   response:
     class: Symfony\Component\HttpFoundation\Response
     factory: [ "@http_kernel", handle]
@@ -450,7 +450,7 @@ services:
       arguments: [ "@request", "@templating.twig", "@doctrine.entity_manager" ]
 ```
 
-But is this controller really need access to entity manager? Let's inject just certain entity repository.
+But is this controller really need access to the entity manager? Let's inject just certain entity repository.
 
 ```
 # in config/repositories.yml
