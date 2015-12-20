@@ -1,7 +1,16 @@
 services:
+# single controller example
+#  request_attributes:
+#    class: \Symfony\Component\HttpFoundation\ParameterBag
+#    calls:
+#      - [ set, [_controller, [ "@controller.default", defaultAction ]]]
   request:
     class: Symfony\Component\HttpFoundation\Request
     factory: [ Symfony\Component\HttpFoundation\Request, createFromGlobals ]
+# single controller example
+#    properties:
+#      attributes: "@request_attributes"
+
   request_stack:
     class: Symfony\Component\HttpFoundation\RequestStack
   resolver:

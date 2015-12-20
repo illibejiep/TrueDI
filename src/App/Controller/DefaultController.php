@@ -1,36 +1,13 @@
 <?php
 namespace App\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
+use App\Controller\Base\WebController;
 use Symfony\Component\HttpFoundation\Response;
-class DefaultController {
 
-    protected $request;
-
-    protected $templating;
-
-    function __construct($request, $templating)
-    {
-        var_dump(get_class());
-        $this->request = $request;
-        $this->templating = $templating;
-    }
-
+class DefaultController extends WebController {
 
     function defaultAction()
     {
-        $content = $this->templating->render(
-            'Default/default.twig',
-            array(
-                'name' => 'asdf',
-            )
-        );
-
-        return new Response($content);
-    }
-
-    function asdfAction()
-    {
-        return new Response('asdf');
+        return new Response('Hello cruel world ');
     }
 }

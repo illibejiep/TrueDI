@@ -1,25 +1,22 @@
 <?php
 namespace App\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use App\Entity\Page;
+use Twig_Environment;
 
 class PageController {
 
-    /** @var Request  */
-    protected $request;
-
+    /** @var  Twig_Environment */
     protected $templating;
 
     /** @var  EntityRepository */
     protected $pageRepository;
 
-    function __construct(Request $request, $templating, $pageRepository)
+    function __construct($templating, $pageRepository)
     {
-        $this->request = $request;
         $this->templating = $templating;
         $this->pageRepository = $pageRepository;
     }

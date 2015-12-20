@@ -1,22 +1,12 @@
+imports:
+  - { resource: 'routes/default.yml' }
+
 services:
-  route.home:
-    class: Symfony\Component\Routing\Route
-    arguments:
-      path: /
-      defaults:
-        _controller: ["@controller.default", 'defaultAction']
-  route.asdf:
-    class: Symfony\Component\Routing\Route
-    arguments:
-      path: /page/{id}
-      defaults:
-        _controller: ["@controller.page", 'defaultAction']
   route.collection:
     class: Symfony\Component\Routing\RouteCollection
     calls:
       - [ add, ["route_home", "@route.home"] ]
-      - [ add, ["route_asdf", "@route.asdf"] ]
-
+      - [ add, ["route_page", "@route.page"] ]
   router.request_context:
       class: Symfony\Component\Routing\RequestContext
       calls:
@@ -29,4 +19,9 @@ services:
     arguments:
       matcher: "@router.matcher"
       request_stack: "@request_stack"
+      context: "@router.request_context"
+  router.generator:
+    class: Symfony\Component\Routing\Generator\UrlGenerator
+    arguments:
+      routes: "@route.collection"
       context: "@router.request_context"
