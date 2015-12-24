@@ -4,13 +4,13 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Bridge\ProxyManager\LazyProxy\Instantiator\RuntimeInstantiator;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
-
-class TrueBuilder {
+class TrueContainer extends ContainerBuilder {
 
     public static function buildContainer($rootPath)
     {
-        $container = new ContainerBuilder();
+        $container = new self();
         $container->setProxyInstantiator(new RuntimeInstantiator());
         $container->setParameter('app_root', $rootPath);
         $loader = new YamlFileLoader(
@@ -21,5 +21,17 @@ class TrueBuilder {
         $container->compile();
 
         return $container;
+    }
+
+    public function get($id, $invalidBehavior = ContainerInterface::EXCEPTION_ON_INVALID_REFERENCE)
+    {
+        if (strtolower($id) == 'service_container') {
+            if (ContainerInterface::EXCEPTION_ON_INVALID_REFERENCE !== $invalidBehavior) {
+                return;
+            }
+            throw new InvalidArgumentException(sprintf('The service definition "%s" does not exist.', $id));
+        }
+
+        return parent::get($id, $invalidBehavior);
     }
 }
