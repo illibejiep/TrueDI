@@ -5,9 +5,14 @@ services:
       path: /
       defaults:
         _controller: ["@controller.default", 'defaultAction']
+    tags:
+      - { name: route, route_name: 'route_home' }
+
   route.page:
     class: Symfony\Component\Routing\Route
     arguments:
       path: /page/{id}
       defaults:
         _controller: ["@controller.page", 'defaultAction']
+    tags:
+      - { name: route, route_name: 'route_page' }

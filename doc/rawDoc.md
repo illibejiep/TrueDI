@@ -467,3 +467,10 @@ services:
       class: App\Controller\PageController
       arguments: [ "@request", "@templating.twig", "@repository.page" ]
 ```
+
+#Security
+
+```
+composer require symfony/security
+```
+

@@ -5,12 +5,14 @@ use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Bridge\ProxyManager\LazyProxy\Instantiator\RuntimeInstantiator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use CompilerPass\RouterTagCompilerPass;
 
 class TrueContainer extends ContainerBuilder {
 
     public static function buildContainer($rootPath)
     {
         $container = new self();
+        $container->addCompilerPass(new RouterTagCompilerPass());
         $container->setProxyInstantiator(new RuntimeInstantiator());
         $container->setParameter('app_root', $rootPath);
         $loader = new YamlFileLoader(

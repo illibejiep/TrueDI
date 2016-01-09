@@ -9,7 +9,8 @@
         "symfony/config": "^3.0",
         "twig/twig": "^1.23",
         "symfony/proxy-manager-bridge": "^3.0",
-        "doctrine/orm": "^2.5"
+        "doctrine/orm": "^2.5",
+        "symfony/security": "^3.0"
     },
     "authors": [
         {

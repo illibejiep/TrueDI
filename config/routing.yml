@@ -4,9 +4,8 @@ imports:
 services:
   route.collection:
     class: Symfony\Component\Routing\RouteCollection
-    calls:
-      - [ add, ["route_home", "@route.home"] ]
-      - [ add, ["route_page", "@route.page"] ]
+    tags:
+      - { name: route_collection }
   router.request_context:
       class: Symfony\Component\Routing\RequestContext
       calls:
