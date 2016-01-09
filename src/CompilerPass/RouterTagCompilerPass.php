@@ -26,17 +26,19 @@ class RouterTagCompilerPass implements CompilerPassInterface
             $routeCollections[] = $container->getDefinition($serviceName);
 
         foreach ($routeTags as $routeServiceName => $tagData) {
-            $routeName = null;
-            if (isset($tagData[0]['route_name']))
-                $routeName = $tagData[0]['route_name'];
+            $routeNames = array();
+            foreach ($tagData as $tag)
+                if (isset($tag['route_name']))
+                    $routeNames[] = $tag['route_name'];
 
-            if (!$routeName)
+            if (!$routeNames)
                 continue;
 
             $routeReference = new Reference($routeServiceName);
             foreach ($routeCollections as $collection)
-                $collection->addMethodCall('add', array($routeName, $routeReference));
+                foreach ($routeNames as $name)
+                    $collection->addMethodCall('add', array($name, $routeReference));
         }
     }
 
-} 
+}
